@@ -6,7 +6,7 @@
    box-sizing: border-box;
 }
 html, body{
-   overflow-x: hidden;
+   /* overflow-x: hidden; */
     height: auto;
     width: 100vw;
     background-color: black;
