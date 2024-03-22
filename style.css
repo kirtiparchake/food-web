@@ -39,11 +39,24 @@ nav{
     flex-wrap: nowrap;
 }
 .icon{
-    
+    /* color: black; */
     letter-spacing: 10px;
     font:1.5em sans-serif;
     cursor: pointer;
     margin-right: 20px;
+}
+.user{
+    background-color: white;
+    color: black;
+   padding-left: 7px;
+}.cart{
+    background-color: white;
+    color: black;
+   padding-left: 7px;
+}.menu{
+    background-color: white;
+    color: black;
+   padding-left: 7px;
 }
 .input{
     position: relative;
