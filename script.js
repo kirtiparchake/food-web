@@ -23,27 +23,44 @@ function myfun(){
     }
     console.log(searchbar)
 }
-function nav(){
-    let nav=document.querySelector('.nav')
-    nav.style.display= "block";
+function toggleNav() {
+    let nav = document.querySelector('.nav');
+    let login = document.querySelector('.login');
 
-
-
-
-    let login=document.querySelector('.login')
-    login.style.display='none'
-    
+    // Toggle the display of nav and hide login
+    if (nav.style.display === 'block') {
+        nav.style.display = 'none';
+    } else {
+        nav.style.display = 'block';
+        login.style.display = 'none'; // Assuming you want to hide login whenever nav is opened
+    }
 }
-function login (){
-    let login=document.querySelector('.login')
-      login.style.display='block'
 
+function toggleLoginNav() {
+    let login = document.querySelector('.login');
+    let nav = document.querySelector('.nav');
 
-    let nav=document.querySelector('.nav')
-      nav.style.display= "none"
-    
-    
+    // Toggle the display of login and nav
+    if (login.style.display === 'block' || nav.style.display === 'block') {
+        login.style.display = 'none';
+        nav.style.display = 'none';
+    } else {
+        login.style.display = 'block';
+        nav.style.display = 'none'; // Assuming you want to hide nav initially
+    }
 }
+
+function nav() {
+    let nav = document.querySelector('.nav');
+    let login = document.querySelector('.login');
+
+    // Display nav and hide login
+    nav.style.display = 'block';
+    login.style.display = 'none';
+}
+
+
+
 let slide = document.querySelectorAll(".customer");
 let count = 0;
 console.log(slide);
