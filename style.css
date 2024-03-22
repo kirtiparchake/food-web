@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Outfit:wght@100..900&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html, body{
+   overflow-x: hidden;
+    height: auto;
+    width: 100vw;
+    background-color: black;
+    font-family: outfit;
+    color: aliceblue;
+}
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+nav{
+    height: 8%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+}
+.text{
+    width: 500px;
+    padding: 6px 2px;
+
+}
+ nav h2{
+    color: rgb(235, 122, 81);
+    /* padding-left: 50px; */
+    font-size: 2rem;
+    flex-wrap: nowrap;
+}
+.icon{
+    
+    letter-spacing: 10px;
+    font:1.5em sans-serif;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.input{
+    position: relative;
+    
+}
+.ri-search-2-line{
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: black;
+}
+
+
+.head{
+    height: 70%;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+.left{
+    margin-left: 20px;
+    /* text-align: center; */
+    height:100%;
+    width: 50%;
+   justify-content:center ;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+.right img{
+    width: 70%;
+ margin-left: 10%;
+   /* padding-top: 80px; */
+}
+.left h1{
+    text-transform: capitalize;
+    /* margin-bottom: 30px; */
+}
+.left button{
+    padding: 10px 2px;
+    width: 120px;
+    background-color:rgb(235, 122, 81);
+    border: 2px;
+    text-transform: capitalize;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+   
+}
+.head h1{
+    font-size: 4rem;
+}
+.dishes{
+    /* background-color: aliceblue; */
+    height:auto;
+    width: 100%;
+   background-color: black;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   color: white;
+   text-transform: capitalize;
+}
+.dishes h1{
+    color: rgb(235, 122, 81);
+    text-transform: capitalize;
+    font-size: 3rem;
+   
+
+}
+.topdish{
+    padding-top: 20px;
+    margin-top: 20px;
+   width: 90%;
+    display: flex;
+    gap: 50PX;
+    background-color: aliceblue;
+    
+    color: black;
+    justify-content: space-evenly;
+    padding-bottom: 12px;
+}
+.topdish button{
+  
+    width: 100px;
+    background-color:rgb(235, 122, 81); 
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 12px;
+    border: 2px solid;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;;
+
+}
+.downdish {
+    padding-top: 20px;
+   margin-top: 50px;
+    width: 90%;
+    display: flex;
+    gap: 50PX;
+    background-color: aliceblue;
+    padding-bottom: 12px;
+    color: black;
+    justify-content: space-evenly;
+}
+.downdish button{
+    width: 100px;
+    background-color:rgb(235, 122, 81); 
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 12px;
+    border: 2px solid;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+
+}
+.dish1{
+
+   width: 25%;
+   display: flex;
+ 
+   
+   flex-direction: column;
+   
+   
+}
+.dish2{
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+}
+.dish3{
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+}
+.dish4{
+
+   width: 25%;
+   display: flex;
+   /* background-color: aliceblue; */
+   flex-direction: column;
+   
+}
+.dish5{
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+}
+.dish6{
+   width: 25%;
+   display: flex;
+   flex-direction: column;
+}
+.blog{
+   
+    height:auto;
+    width: 100%;
+   background-color: black;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   color: white;
+}
+.blog h1{
+    color: rgb(235, 122, 81);
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-top: 20px;
+   
+}
+.blog button{
+    width: 100px;
+    background-color:rgb(235, 122, 81); 
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 12px;
+    border: 2px solid;
+    font-weight: bold;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.dishblog{
+    padding-top: 20px;
+    margin-top: 50px;
+    width: 90%;
+    display: flex;
+    gap: 50PX;
+    background-color:white;
+    padding-bottom: 12px;
+    color: black;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+}
+
+ 
+.blog1{
+
+    width: 25%;
+    display: flex;
+  
+    
+    flex-direction: column;
+    
+    
+ }
+ .blog2{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+ }
+ .blog3{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+ }  
+ .review h1{
+    color: rgb(14, 13, 13);
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-top: 20px;
+ }
+.review{
+    margin-left: 20%;
+    margin-top: 20px;
+    height:auto;
+    width: 60%;
+   background-color:white;
+   align-items: center;
+   border-radius: 50px;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   color: rgb(17, 17, 17);
+   text-transform: capitalize;
+   padding-bottom: 20px;
+}
+.menimg img{
+    border-radius: 50%;
+}
+.ratingimg img{
+     margin-left: 30%;
+}
+.btn{
+    margin-top: 100px;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    gap: 40px;
+    margin-bottom: 100px;
+    margin-left: 40%;
+
+
+}
+.rating span{
+    margin-left: 10%;
+}
+.btn button{
+    cursor: pointer;
+    width: 100px;
+    background-color:rgb(235, 122, 81); 
+    padding: 10px;
+    text-transform: capitalize;
+    border-radius: 12px;
+    
+    border: 2px solid;
+    font-weight: bold;
+    margin-top: 20px;
+} 
+.footer{
+    cursor: pointer;
+    position: sticky;
+    height: 40%;
+    background-color: white;
+    color: black;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.about{
+   
+}
+.footer span {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
