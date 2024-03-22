@@ -292,10 +292,12 @@ nav{
     display: flex;
     flex-direction: column;
  }  
- .review h1{
-    color: rgb(14, 13, 13);
+ .rating h1{
+   color:rgb(235, 122, 81); 
     text-transform: capitalize;
     font-size: 3rem;
+    text-align: center;
+    margin-left: 15%;
     margin-top: 20px;
  }
 .review{
