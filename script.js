@@ -99,28 +99,24 @@ function bar(){
 
 
 
-// Function to display the cart page in a new tab
 function navigateToCart() {
     window.open('cart.html', '_blank');
 }
 
-// Function to add an item to the cart
 function addToCart(name, price, img) {
     let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
     cartItems.push({ name: name, price: price, img: img });
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    displayCart(); // Update the cart display
+    displayCart();
 }
 
-// Function to delete an item from the cart based on its index
 function deleteItem(index) {
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    cartItems.splice(index, 1); // Remove the item at the specified index
+    cartItems.splice(index, 1);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    displayCart(); // Update the cart display
+    displayCart();
 }
 
-// Retrieve cart items from local storage
 function displayCart() {
     let cartIcon = document.querySelector('.cart');
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -131,15 +127,12 @@ function displayCart() {
     if(cartItemsContainer){
         cartItemsContainer.innerHTML = '';
         if (cartItems && cartItems.length > 0) {
-            console.log(cartItems)
             cartItems.forEach((item, index) => {
-    
                 let itemElement = document.createElement('div');
                 itemElement.classList.add('dish-card');
                 itemElement.innerHTML = `
                     <button class="delete-button" onclick="deleteItem(${index})">X</button>
                     <img src="${item.img}" alt="${item.name}">
-    
                     <div class="dish-details">
                         <h2 class="dish-name">${item.name}</h2>
                         <p class="dish-price">Price: ${item.price}</p>
@@ -155,7 +148,8 @@ function displayCart() {
     }
 }
 
-displayCart(); // Initial display
+
+// Initial display
 function viewDishDetails(name, price, image) {
     // Encode dish details in the URL parameters
     const queryParams = new URLSearchParams({
@@ -166,3 +160,4 @@ function viewDishDetails(name, price, image) {
     // Redirect to the new page with dish details
     window.location.href = 'dish-details.html?' + queryParams.toString();
 }
+displayCart();
