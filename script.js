@@ -68,75 +68,9 @@ console.log(slide);
 slide.forEach(function(customer, index){
     customer.style.left=`${index * 100}%`
 })
-function displayDishDetails(dishName, price) {
-    // Open a new tab
-    let newTab = window.open('', '_blank');
-    
-    // Write HTML content to the new tab
-    newTab.document.write(`
-        <html>
-        <head>
-            <title>${dishName} Details</title>
-            <style>
-                /* Inline CSS styles for the new tab content */
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f8f8f8;
-                    padding: 20px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 20px;
-                }
-                .dish-details {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    justify-content: center;
-                    max-width: 50%;
-                }
-                h1 {
-                    color: #333;
-                    margin-bottom: 10px;
-                }
-                img {
-                    max-width: 100%;
-                    height: auto;
-                    margin-right: 20px;
-                }
-                p {
-                    margin-bottom: 10px;
-                }
-                button {
-                    padding: 10px 20px;
-                    background-color: #ff9800;
-                    color: #fff;
-                    border: none;
-                    cursor: pointer;
-                    margin-right: 10px;
-                }
-                div{
-                    display: flex;
-                }
-                button:hover {
-                    background-color: #f57c00;
-                }
-            </style>
-        </head>
-        <body>
-            <img src="img/${dishName}.jpg" alt="${dishName}">
-            <div class="dish-details">
-                <h1>${dishName}</h1>
-                <p>Price: ${price}</p>
-                <p>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ipsum.</p>
-                <div>
-                <button onclick="order('${dishName}')">Order</button>
-                <button onclick="addToCart('${dishName}')">Add to Cart</button>
-                </div>
-            </div>
-        </body>
-        </html>
-    `);
+function openDishDetails(name, price, image, description) {
+    // Redirect to the dish-details.html page with query parameters
+    window.location.href = `dish-details.html?name=${encodeURIComponent(name)}&price=${encodeURIComponent(price)}&image=${encodeURIComponent(image)}&description=${encodeURIComponent(description)}`;
 }
 
 
@@ -222,3 +156,13 @@ function displayCart() {
 }
 
 displayCart(); // Initial display
+function viewDishDetails(name, price, image) {
+    // Encode dish details in the URL parameters
+    const queryParams = new URLSearchParams({
+        name: name,
+        price: price,
+        image: image
+    });
+    // Redirect to the new page with dish details
+    window.location.href = 'dish-details.html?' + queryParams.toString();
+}

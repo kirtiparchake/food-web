@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dish Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+        .dish-image {
+            flex: 1;
+        }
+        .dish-details {
+            flex: 2;
+            padding: 20px;
+        }
+        .dish-details h2 {
+            margin-top: 0;
+        }
+        .dish-details p {
+            margin-bottom: 10px;
+        }
+        .order-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .order-button:hover {
+            background-color: rgb(235, 122, 81);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dish-image">
+            <!-- JavaScript will populate this with the dish image -->
+        </div>
+        <div class="dish-details">
+            <!-- JavaScript will populate this with the dish details -->
+        </div>
+    </div>
+
+    <script>
+        // Retrieve query parameters
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const price = params.get('price');
+        const image = params.get('image');
+        const description = params.get('description');
+
+        // Display the details
+        const dishImageContainer = document.querySelector('.dish-image');
+        dishImageContainer.innerHTML = `<img src="${image}" alt="${name}">`;
+
+        const dishDetailsContainer = document.querySelector('.dish-details');
+        dishDetailsContainer.innerHTML = `
+            <h2>${name}</h2>
+            <p>Price: ${price}</p>
+            <p>Description: ${description}</p>
+            <button class="order-button" onclick="order()">Order Now</button>
+        `;
+
+        // Function to handle order button click
+        function order() {
+            // Handle order logic here
+            alert('Order placed successfully!');
+        }
+    </script>
+</body>
+</html>
