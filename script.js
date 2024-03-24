@@ -166,21 +166,8 @@ function bar(){
 
 
 // Function to display the cart page in a new tab
-function displayCart() {
-    let newTab = window.open('cart.html', '_blank');
-}
-
-// Your existing functions for search and navigation toggle
-function myfun() {
-    // Your existing code
-}
-
-function toggleNav() {
-    // Your existing code
-}
-
-function toggleLoginNav() {
-    // Your existing code
+function navigateToCart() {
+    window.open('cart.html', '_blank');
 }
 
 // Function to add an item to the cart
@@ -201,30 +188,36 @@ function deleteItem(index) {
 
 // Retrieve cart items from local storage
 function displayCart() {
+    let cartIcon = document.querySelector('.cart');
     let cartItems = JSON.parse(localStorage.getItem('cartItems'));
     let cartItemsContainer = document.getElementById('cart-items');
-    cartItemsContainer.innerHTML = '';
-    if (cartItems && cartItems.length > 0) {
-        console.log(cartItems)
-        cartItems.forEach((item, index) => {
-
-            let itemElement = document.createElement('div');
-            itemElement.classList.add('dish-card');
-            itemElement.innerHTML = `
-                <button class="delete-button" onclick="deleteItem(${index})">X</button>
-                <img src="${item.img}" alt="${item.name}">
-
-                <div class="dish-details">
-                    <h2 class="dish-name">${item.name}</h2>
-                    <p class="dish-price">Price: ${item.price}</p>
-                    <button class="order-button" onclick="order('${item.name}')">Order</button>
-                </div>
-            `;
-            cartItemsContainer.appendChild(itemElement);
-        });
-    } else {
-        cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
-        cartItemsContainer.style.backgroundColor = '#ffffff'; // Set background color to white
+    if(cartIcon){
+        cartIcon.innerHTML = cartItems ? cartItems.length : 0;
+    }
+    if(cartItemsContainer){
+        cartItemsContainer.innerHTML = '';
+        if (cartItems && cartItems.length > 0) {
+            console.log(cartItems)
+            cartItems.forEach((item, index) => {
+    
+                let itemElement = document.createElement('div');
+                itemElement.classList.add('dish-card');
+                itemElement.innerHTML = `
+                    <button class="delete-button" onclick="deleteItem(${index})">X</button>
+                    <img src="${item.img}" alt="${item.name}">
+    
+                    <div class="dish-details">
+                        <h2 class="dish-name">${item.name}</h2>
+                        <p class="dish-price">Price: ${item.price}</p>
+                        <button class="order-button" onclick="order('${item.name}')">Order</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+        } else {
+            cartItemsContainer.innerHTML = '<p>Your cart is empty.</p>';
+            cartItemsContainer.style.backgroundColor = '#ffffff'; // Set background color to white
+        }
     }
 }
 
